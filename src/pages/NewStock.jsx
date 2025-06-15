@@ -46,10 +46,14 @@ const NewStock = () => {
             <div className="form-group">
             <label htmlFor="images">Images:</label>
             <input type="file" onChange={handleChange} />
-            <button onClick={handleClick}>Upload</button>
-            
             </div>
-            <button type="submit">Add Stock</button>
+            <FileUploader
+              acceptedFileTypes={['image/*']}
+              path="images/"
+              maxFileCount={1}
+              isResumable
+            />
+            <button type="submit" onClick={handleClick}>Add Stock</button>
         </form>
     </div>
     </>
