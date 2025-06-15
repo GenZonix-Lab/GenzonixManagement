@@ -16,7 +16,7 @@ const NewStock = () => {
     try {
         async () => {
         const result = await uploadData({
-        path: "images/",
+        path:`photos/${file.name}`,
         data: file,
         }).result;
           console.log('Succeeded:', result);
