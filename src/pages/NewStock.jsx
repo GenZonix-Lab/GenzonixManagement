@@ -13,10 +13,29 @@ const NewStock = () => {
     if (!file) {
       return;
     }
-    uploadData({
-      path: `photos/${file.name}`,
-      data: file,
-    });
+    try {
+        async () => {
+        const result = await uploadData({
+        path: "album/2025/1.jpg",
+        data: file,
+        options: {
+        onProgress: ({ transferredBytes, totalBytes }) => {
+          if (totalBytes) {
+            console.log(
+              `Upload progress ${Math.round(
+                (transferredBytes / totalBytes) * 100
+              )} %`
+            );
+          }
+        },
+      },
+        }).result;
+          console.log('Succeeded:', result);
+        }} 
+        catch (error) {
+            console.error('Error:', error);
+        }
+
   };
   return (
     <>
@@ -39,6 +58,7 @@ const NewStock = () => {
             <label htmlFor="images">Images:</label>
             <input type="file" onChange={handleChange} />
             <button onClick={handleClick}>Upload</button>
+            
             </div>
             <button type="submit">Add Stock</button>
         </form>
