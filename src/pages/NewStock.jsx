@@ -16,19 +16,8 @@ const NewStock = () => {
     try {
         async () => {
         const result = await uploadData({
-        path: "album/2025/1.jpg",
+        path: "images/",
         data: file,
-        options: {
-        onProgress: ({ transferredBytes, totalBytes }) => {
-          if (totalBytes) {
-            console.log(
-              `Upload progress ${Math.round(
-                (transferredBytes / totalBytes) * 100
-              )} %`
-            );
-          }
-        },
-      },
         }).result;
           console.log('Succeeded:', result);
         }} 
