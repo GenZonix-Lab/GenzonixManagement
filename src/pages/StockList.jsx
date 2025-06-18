@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StorageImage } from '@aws-amplify/ui-react-storage';
 
-
 const StockList = () => {
   const [products, setProducts] = useState([]);
 
@@ -27,7 +26,7 @@ const StockList = () => {
       <table className='table table-striped table-bordered'>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>CODE</th>
             <th>TITLE</th>
             <th>DESCRIPTION</th>
             <th>CATEGORY</th>
@@ -50,7 +49,7 @@ const StockList = () => {
         <tbody id="productTable" className='fw-normal fs-6'>
           {products.map((element, index) => (
             <tr key={index}>
-              <td>{element.id}</td>
+              <td>{element.productCode}</td>
               <td><div className="max-row-height max-row-width">{element.title}</div></td>
               <td><div className='max-row-height max-row-width'>{element.description}</div></td>
               <td><div className="max-row-height">{element.category}</div></td>
@@ -60,7 +59,7 @@ const StockList = () => {
                 {element.meta && (
                   <StorageImage 
                     alt="Product" 
-                    path={element.meta?.thumbnail || 'default-thumbnail.jpg'}
+                    path={element.meta?.thumbnail || 'default-thumbnail.png'}
                     width={48} />
                 )}
               </td>
