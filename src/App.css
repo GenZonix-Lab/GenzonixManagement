@@ -1,48 +1,3 @@
-td{
-    max-width: 70px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-wrap: break-word;
-    font-weight: 100;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #f2f2f2;
-    transition: background-color 0.2s ease;
-}
-/* td, th {
-    padding: 3px 6px;
-    text-align: left;
-    border: 1px solid #130285;
-    color: #130285;
-    max-width: 70px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-wrap: break-word;
-    font-weight: 100;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #f2f2f2;
-    transition: background-color 0.2s ease;
-}
-td:hover, th:hover {
-    background-color: #d1d1d1;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    
-}
-th {
-    background-color: #130285;
-    color: white;
-    font-weight: bold;
-    border: #d1d1d1 1px solid;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center !important; 
-} */
 .search-box{
     max-width: 1000px;
     margin: auto;
@@ -55,11 +10,7 @@ th {
     font-size: 1em;
     box-sizing: border-box;
 }
-.search-box input:focus {
-    outline: none;
-    border-color: #84c0d4;
-    box-shadow: 0 0 5px rgba(132, 192, 212, 0.5);
-}
+
 .search-box input::placeholder {
     color: #130285;
     opacity: 0.7;
@@ -90,4 +41,23 @@ th {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+.max-row-height{
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.stock-details table{
+    background-color: #d1cbf6;
+    border-color: #130285;
+}
+.stock-details table tbody td,th {
+    font-size: 0.7em;
+}
+.stock-details table tbody td div:hover{
+    overflow: visible;
+    max-height: fit-content;
+}
+.stock-details table tbody td:hover,.stock-details table thead th:hover{
+    background-color: #c2baf3;
 }

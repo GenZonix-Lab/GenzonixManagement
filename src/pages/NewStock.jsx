@@ -13,6 +13,7 @@ const NewStock = () => {
     discount: '',
     price: '',
     stock: '',
+    shown: false,
     warranty: '',
     returnPolicy: '',
     thumbnail: '',
@@ -54,7 +55,7 @@ const NewStock = () => {
   };
   return (
     <div className="new-stock">
-      <h2>New Stock Entry</h2>
+      <h2 className='text-center fw-bolder'>Add Stock</h2>
       <form onSubmit={handleOption} className='row g-3'>
         {[
           { label: "Product Code", id: "productCode" },
@@ -95,7 +96,6 @@ const NewStock = () => {
             )}
           </div>
         ))}
-
         <div className="form-group col-xl-4 col-lg-6">
           <label htmlFor="thumbnail" className='form-label'>Front Image:</label>
           <FileUploader
@@ -138,6 +138,20 @@ const NewStock = () => {
               setForm(prev => ({ ...prev, videos: [...(prev.videos || []), file.key] }));
             }}
           />
+        </div>
+        <div className="form-group col-xl-4 col-lg-6">
+          <label htmlFor="shown" className='form-label'>Display on Public website:</label>
+          <div className="form-control d-flex justify-content-evenly">
+            <div>
+              <input type="radio" name="shown" id="shown" onChange={()=>{setForm(prev => ({ ...prev, shown:true }))}} value={true}/>
+              <span className='mx-2'>Shown</span>
+            </div>
+            <div>
+              <input type="radio" name="shown" id="shown" onChange={()=>{setForm(prev => ({ ...prev, shown:false }))}} value={false}/>
+              <span className='mx-2'>Not Shown</span>
+            </div>
+          
+          </div>
         </div>
         <div className="form-group">
           <button className='btn btn-dark py-2 mb-4 justify-content-center col form-control' type="submit">Add Stock</button>

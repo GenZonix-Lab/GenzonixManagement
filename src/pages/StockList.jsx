@@ -14,7 +14,6 @@ const StockList = () => {
         }
         const data = await response.json();
         const productsData = JSON.parse(data.body); // Make sure this is the correct structure
-        console.log(productsData);
         setProducts(productsData);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -23,12 +22,9 @@ const StockList = () => {
 
     fetchData();
   }, []);
-  const handleClick = async (product)=>{
-    console.log(products)
-  }
   return (
     <div className="stock-details">
-      <table>
+      <table className='table table-striped table-bordered'>
         <thead>
           <tr>
             <th>CODE</th>
@@ -51,28 +47,21 @@ const StockList = () => {
             <th>SHOWN</th>
           </tr>
         </thead>
-        <tbody id="productTable" className='fw-light'>
+        <tbody id="productTable" className='fw-normal fs-6'>
           {products.map((element, index) => (
             <tr key={index}>
               <td>{element.productCode}</td>
-              <td>{element.title}</td>
-              <td>{element.description}</td>
-              <td>{element.category}</td>
+              <td><div className="max-row-height">{element.title}</div></td>
+              <td><div className='max-row-height max-row-width'>{element.description}</div></td>
+              <td><div className="max-row-height">{element.category}</div></td>
               <td>{element.brand}</td>
               <td>{element.sku}</td>
               <td>
                 {element.meta && (
                   <StorageImage 
                     alt="Product" 
-                    path={()=>{
-                      if (element.meta.thumbnail) {
-                        return element.meta.thumbnail;
-                      } else {
-                        return 'default-thumbnail.jpg'; // Fallback image if no thumbnail is available
-                      }
-                    }
-                  }
-                    width={50} />
+                    path={element.meta?.thumbnail || 'default-thumbnail.jpg'}
+                    width={150} />
                 )}
               </td>
               <td>{element.mrp}</td>
@@ -82,15 +71,14 @@ const StockList = () => {
               <td>{element.out}</td>
               <td>{element.stock}</td>
               <td>{element.rating}</td>
-              <td>{element.review}</td>
-              <td>{element.warrantyInformation}</td>
-              <td>{element.returnPolicy}</td>
-              <td>{element.shown}</td>
+              <td><div className="max-row-height">{element.review}</div></td>
+              <td><div className="max-row-height">{element.warrantyInformation}</div></td>
+              <td><div className="max-row-height">{element.returnPolicy}</div></td>
+              <td>{element.shown?'True':'False'}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button onClick={()=>handleClick()}>show items</button>
     </div>
   );
 };
