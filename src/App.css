@@ -43,8 +43,11 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .max-row-height{
-    max-height: 100px;
+    max-height: 60px;
     overflow: hidden;
+}
+.max-row-width{
+    max-width: 1200px;
 }
 
 .stock-details table{
@@ -52,7 +55,7 @@
     border-color: #130285;
 }
 .stock-details table tbody td,th {
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
 .stock-details table tbody td div:hover{
     overflow: visible;

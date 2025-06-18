@@ -51,7 +51,7 @@ const StockList = () => {
           {products.map((element, index) => (
             <tr key={index}>
               <td>{element.productCode}</td>
-              <td><div className="max-row-height">{element.title}</div></td>
+              <td><div className="max-row-height max-row-width">{element.title}</div></td>
               <td><div className='max-row-height max-row-width'>{element.description}</div></td>
               <td><div className="max-row-height">{element.category}</div></td>
               <td>{element.brand}</td>
@@ -61,7 +61,7 @@ const StockList = () => {
                   <StorageImage 
                     alt="Product" 
                     path={element.meta?.thumbnail || 'default-thumbnail.jpg'}
-                    width={150} />
+                    width={48} />
                 )}
               </td>
               <td>{element.mrp}</td>
