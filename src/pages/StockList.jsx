@@ -27,7 +27,7 @@ const StockList = () => {
       <table className='table table-striped table-bordered'>
         <thead>
           <tr>
-            <th>CODE</th>
+            <th>ID</th>
             <th>TITLE</th>
             <th>DESCRIPTION</th>
             <th>CATEGORY</th>
@@ -50,7 +50,7 @@ const StockList = () => {
         <tbody id="productTable" className='fw-normal fs-6'>
           {products.map((element, index) => (
             <tr key={index}>
-              <td>{element.productCode}</td>
+              <td>{element.id}</td>
               <td><div className="max-row-height max-row-width">{element.title}</div></td>
               <td><div className='max-row-height max-row-width'>{element.description}</div></td>
               <td><div className="max-row-height">{element.category}</div></td>
