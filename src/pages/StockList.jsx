@@ -59,7 +59,7 @@ const StockList = () => {
                 {element.meta && (
                   <StorageImage 
                     alt="Product" 
-                    path={element.meta?.thumbnail || 'default-thumbnail.png'}
+                    path={element.meta?.thumbnail || 'default/default-thumbnail.png'}
                     width={48} />
                 )}
               </td>
