@@ -14,7 +14,7 @@ const InventoryTeam = () => {
 
   return (
     <>
-      <div className="container d-flex flex-column align-items-end justify-content-end">
+      <div className="container-fluid d-flex flex-column align-items-end justify-content-end">
         <button onClick={handleClick} id="FormToggleButton" className="btn-toggle mb-3">
           {showNewStock ? "Stock Details" : "Add New Stock"}
         </button>

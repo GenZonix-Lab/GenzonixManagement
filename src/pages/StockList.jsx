@@ -14,6 +14,7 @@ const StockList = () => {
         }
         const data = await response.json();
         const productsData = JSON.parse(data.body); // Make sure this is the correct structure
+        console.log(productsData);
         setProducts(productsData);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -22,6 +23,9 @@ const StockList = () => {
 
     fetchData();
   }, []);
+  const handleClick = async (product)=>{
+    console.log(products)
+  }
   return (
     <div className="stock-details">
       <table>
@@ -37,16 +41,17 @@ const StockList = () => {
             <th>MRP</th>
             <th>DISCOUNT</th>
             <th>PRICE</th>
-            <th>ISK</th>
-            <th>OSK</th>
-            <th>CSK</th>
+            <th>IN</th>
+            <th>OUT</th>
+            <th>STOCK</th>
             <th>RATING</th>
             <th>FEEDBACK</th>
             <th>WARRANTY</th>
             <th>RETURN POLICY</th>
+            <th>SHOWN</th>
           </tr>
         </thead>
-        <tbody id="productTable">
+        <tbody id="productTable" className='fw-light'>
           {products.map((element, index) => (
             <tr key={index}>
               <td>{element.productCode}</td>
@@ -73,17 +78,19 @@ const StockList = () => {
               <td>{element.mrp}</td>
               <td>{element.discount}</td>
               <td>{element.price}</td>
-              <td>{element.isk}</td>
-              <td>{element.osk}</td>
-              <td>{element.csk}</td>
+              <td>{element.in}</td> 
+              <td>{element.out}</td>
+              <td>{element.stock}</td>
               <td>{element.rating}</td>
               <td>{element.review}</td>
               <td>{element.warrantyInformation}</td>
               <td>{element.returnPolicy}</td>
+              <td>{element.shown}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      <button onClick={()=>handleClick()}>show items</button>
     </div>
   );
 };
