@@ -1,7 +1,7 @@
 import { defineStorage } from '@aws-amplify/backend';
 
 export const storage = defineStorage({
-  name: 'inventoryStorage',
+  name: 'imageStorage',
   access:(allow) => ({
     'media/{entity_id}/*': [
       // {entity_id} is the token that is replaced with the user identity id
@@ -9,5 +9,6 @@ export const storage = defineStorage({
       allow.authenticated.to(['read', 'write', 'delete']),
     ]
   })
+
     
 });

@@ -38,3 +38,51 @@ th {
     transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center !important; 
 }
+.search-box{
+    max-width: 1000px;
+    margin: auto;
+}
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #130285;
+    border-radius: 3px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+.search-box input:focus {
+    outline: none;
+    border-color: #84c0d4;
+    box-shadow: 0 0 5px rgba(132, 192, 212, 0.5);
+}
+.search-box input::placeholder {
+    color: #130285;
+    opacity: 0.7;
+}
+.search-box input[type="text"] {
+    background-color: #f2f2f2;  
+    color: #130285;
+    font-weight: 300;
+    margin: 0px 2px;
+}
+.search-box button{
+    background-color: #130285;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin: 0px 2px;
+    border-radius: 4px 4px 0px 0px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-toggle {
+    background-color: #130285;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0px 0px 20px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
