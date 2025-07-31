@@ -12,6 +12,19 @@ useEffect(() => {
     };
     fetchResourceDetail();
 }, []);
+resourceDetail.map((element)=>( 
+    element.data_event.map( res => (
+        //console.log(res)
+        res.map( events => (
+                //console.log(events.Resources)
+                events.Resources.map( datares => (
+                    console.log("Type:",datares.ResourceType,"Name:", datares.ResourceName)
+                ))
+            ))
+        
+        ))
+    //console.log(element.user_name)
+    ))
   return (
     <>
     <div className="container">
@@ -29,15 +42,32 @@ useEffect(() => {
                 </tr>
             </thead>
             {resourceDetail.map((element)=>( 
-            <tbody key={element.user_name} id='productTable'>
+            <tbody id='productTable'>
                 {element.data_event.map( res => (res.map( events => (
-                <tr key={events.EventId}>
-                    <td className='border'>{events.Username}</td>
-                    <td className='border'>{events.EventName}</td>
-                    <td className='border'>{events.EventTime}</td>
-                    <td className='border'>{events.Resources}</td>
-                    <td className='border'>{events.Region}</td>
-                </tr>
+                    <tr>
+                        <td className='border'>{events.Username}</td>
+                        <td className='border'>{events.EventName}</td>
+                        <td className='border'>{events.EventTime}</td>
+                        <td className='border'>
+                            <table className='table table-striped' style={{display: events.Resources.length > 0 ? '' : 'none'}}>
+                                <thead>
+                                    <tr className='text-center fw-100'>
+                                        <th className='border-end'>ResourceType</th>
+                                        <th>ResourceName</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {events.Resources.map( datares => (
+                                    <tr>
+                                        <td className='border-end'>{datares.ResourceType}</td>
+                                        <td>{datares.ResourceName}</td>
+                                    </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </td>
+                        <td className='border'>{events.Region}</td>
+                    </tr>
                 ))))}
             </tbody>
             ))}

@@ -7,6 +7,7 @@ const Home = () => {
     <div align="center">
       <NavLink to={'/package'}><button>Package Team</button></NavLink>
       <NavLink to={'/inventory'}><button>Inventory Team</button></NavLink>
+      <NavLink to={'/resourceUse'}><button>Cloud Resourse Management</button></NavLink>
     </div>
     
     <div className="mainPage">
