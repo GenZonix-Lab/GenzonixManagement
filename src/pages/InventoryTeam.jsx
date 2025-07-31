@@ -1,5 +1,5 @@
 import NewStock from "./NewStock";
-import SearchItems from "./SearchItems";
+import SearchItems from "../Components/SearchItems";
 import StockList from "./StockList";
 import '@aws-amplify/ui-react/styles.css';
 

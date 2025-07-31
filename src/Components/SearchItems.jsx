@@ -3,7 +3,7 @@ import React from 'react'
 const SearchItems = () => {
   return (
     <div className="search-box d-flex justify-content-between mb-2">
-      <input type="text" className='flex-lg-fill' placeholder="Search by product code or title" id="searchInput" />
+      <input type="text" className='flex-lg-fill' placeholder="Type here to find-out" id="searchInput" />
       <button onClick={() => {
         const searchValue = document.getElementById('searchInput').value.toLowerCase();
         const rows = document.querySelectorAll('#productTable tr');
