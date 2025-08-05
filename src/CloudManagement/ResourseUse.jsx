@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import SearchItems from '../Components/SearchItems'
-const resourseApi = 'https://yn5xuarjc7.execute-api.ap-south-1.amazonaws.com/production//UsedResourceByUser'
+const resourseApi = 'https://hss03vsscj.execute-api.ap-south-1.amazonaws.com/Production/UsedResourceByUser'
 const ResourseUse = () => {
     const [resourceDetail,setResourceDetail] = useState([]);
 useEffect(() => {
