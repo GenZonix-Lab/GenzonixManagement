@@ -44,7 +44,7 @@ const NewStock = () => {
     };
 
     try {
-      const response = await fetch("https://ki4mm5ajnj.execute-api.ap-south-1.amazonaws.com/prod/add", postData);
+      const response = await fetch("https://hss03vsscj.execute-api.ap-south-1.amazonaws.com/Production/add", postData);
       if (!response.ok) throw new Error('Network response was not ok: ' + response.statusText);
       const data = await response.json();
       console.log('Success:', data);
